@@ -1,4 +1,4 @@
-//Reverse each word in this sentence
+//Reverse each word in the  sentence below and display result
 let string = "I study JavaScript!";
 
 let reverseSentence = reverseBySeparator(string, "");
