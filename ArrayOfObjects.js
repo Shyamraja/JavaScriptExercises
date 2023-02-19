@@ -1,30 +1,46 @@
 const users=[
     {
+    id: 1,
     firstName:"Sam",
     lastName:"Biden",
     age:26,
+    isActive: true,
     address: {
         street:"Kaivokatu",
          Building: 32,
          City: "Helsinki"
     }
    },
-    {firstName:"Siva",lastName:"Punjy",
+   {
+   id: 2,
+    firstName:"Siva",
+    lastName:"Punjy",
     age:55,
+    isActive: false,
     address: {
          street:"Poltokatu",
          Building: 22,
          City: "Vantaa"
       }
     },
-    {firstName:"Ram",lastName:"Kews",age:50,
+    {
+      id: 3,
+      firstName:"Ram",
+      lastName:"Kews",
+      age:50,
+      isActive: true,
     address: {
         street:"Saloltokatu",
         Building: 11,
         City: "Espoo"
      }
 },
-    {firstName:"Ronaldo",lastName:"Cristiano",age:56,
+    {
+      id: 4,
+      firstName:"Ronaldo",
+      lastName:"Cristiano",
+      age:56,
+      isActive: false,
     address: {
         street:"Jankikatu",
         Building: 2,
@@ -32,11 +48,17 @@ const users=[
      }
 },  
   ];
-  
+
+//retun age from first user
+console.log(users[0].age);
+
+//return address of second user
+console.log(users[1].address.street+" "+ users[1].address.Building+" "+ users[1].address.City);
+
 
   //Now for getting List of fullname
-  const fullname=users.map((x)=>{
-      return x.firstName+" "+x.lastName;
+  const fullname=users.map((users)=>{
+      return users.firstName+" "+users.lastName;
   })
   console.log(fullname);
 
@@ -75,14 +97,39 @@ let UsersName = users.filter((users)=>users.age <50 || users.address.City == "He
 console.log(UsersName);
 
 
+//Write a function to Display the firstname of Active users
+const names = users.filter((users)=> 
+users.isActive).map((users =>users.firstName));
+console.log(names);
+
 //for getting list of ages
-  const ages = users.map((user) =>{
-    return user.age;
-  })
+const ages = users.map((user) =>{
+  return user.age;
+})
 console.log(ages);
 
-//retun age from first user
-console.log(users[0].age);
-//return address of second user
-console.log(users[1].address.street+" "+ users[1].address.Building+" "+ users[1].address.City);
-//
+
+//(Sort Method)write function to sort the users firstname in age descending order
+
+users.sort((user1, user2) => 
+
+user1.age < user2.age? 1:-1)
+const firstnames = [];
+for(let i =0; i < users.length; i++){
+    firstnames.push(users[i].firstName);
+  }
+console.log("firstnames", firstnames)
+
+//Better way to write function to sort the users firstname in age descending order
+
+const fnames = users 
+.sort((user1, user2) =>user1.age < user2.age? 1:-1) 
+.map((user)=> user.firstName);
+console.log("fnames", fnames);
+
+//write a function to display fullnames of active users in age ascending order
+
+let activeUsers = users.sort((user1 ,user2) => user1.age > user2.age? 1:-1)
+.filter((user) => user.isActive)
+.map((user) => user.firstName +" "+user.lastName);
+console.log(activeUsers);
