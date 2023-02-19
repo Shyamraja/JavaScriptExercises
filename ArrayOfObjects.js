@@ -133,3 +133,12 @@ let activeUsers = users.sort((user1 ,user2) => user1.age > user2.age? 1:-1)
 .filter((user) => user.isActive)
 .map((user) => user.firstName +" "+user.lastName);
 console.log(activeUsers);
+
+
+//write a function to display firstnames of active users in age ascending order
+const firstname = users
+.sort((user1, user2) =>(user1.age < user2.age? -1:1))
+.filter((user) => user.isActive)
+.map((user)=> user.firstName);
+console.log(firstname);
+

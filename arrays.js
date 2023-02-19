@@ -1,4 +1,4 @@
-//write a function to create the array values greate than 0.
+//write a function to create the array values greate than 0 and divisible by 2.
 const arr = [1, -4, 12, 0, 20, 1122, -3, 29, 100, 123, 2345,-150];
 let sortedArr = []
 //let num = 0
