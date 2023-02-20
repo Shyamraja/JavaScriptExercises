@@ -1,4 +1,5 @@
-/*1.Sorting arrays(basic)
+//1.Sorting arrays(basic)
+/*
 const numbers = [1, 9, 2, 20, 10, 8, 100]
 numbers.sort((a, b) => {
     if(a>b) return 1;

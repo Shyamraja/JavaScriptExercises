@@ -76,3 +76,11 @@ console.log(userName);
 //display active users names
 const userNam = users.filter((users) => users.isActive).map((users) => users.firstName +" "+ users.lastName);
 console.log(userNam);
+
+
+//display users first name and complete address if they live in helsinki and if the user is active
+const fname = 
+users.filter(users => users.isActive || users.address.City === "Helsinki")
+.map((users => `I am ${users.firstName} I live in ${users.address.street} ${users.address.Building} ${users.address.City}`))
+console.log(fname);
+
