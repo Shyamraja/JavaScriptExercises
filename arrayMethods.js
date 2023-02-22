@@ -35,7 +35,7 @@ console.log(returnNew([...arr] ,0));
 //2. Return numbers from array greater than or equal to 10 and divisible by 2
 
 const numbers = [2, 9, 10, -12,44,10024, -45,0 ,100099,9999,76,56]
-let returnArray = (numbers , num) => numbers.filter(n => n >= num && n % 2 === 0);
+let returnArray = (numbers , num) => numbers.filter(n => n >= num && n % 2 == 0);
 console.log(returnArray([...numbers], 10 ));
 
 
